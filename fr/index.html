@@ -561,546 +561,206 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
                         <div class="eltd-content-inner">	<div class="eltd-slider">
 		<div class="eltd-slider-inner">
 			<link href="https://fonts.googleapis.com/css?family=Rokkitt:400%2C700|Open+Sans:400|Noto+Serif:400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
-<!-- START REVOLUTION SLIDER 5.3.1.5 auto mode -->
-	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.1.5">
-<ul>	<!-- SLIDE  -->
-	<li data-index="rs-1" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="wp-content/uploads/Guitarras-y-guitarristas-100x50.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/Guitarras-y-guitarristas.jpg"  alt="" title="Guitares et guitaristes"  width="2000" height="1333" data-bgposition="center center" data-kenburns="on" data-duration="15000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="9" class="rev-slidebg" data-no-retina>
-		<!-- LAYERS -->
+<style>
+.simple-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+}
+.simple-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center center;
+}
+.simple-slider .slide.active {
+    opacity: 1;
+}
+.simple-slider .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    z-index: 10;
+    max-width: 700px;
+    padding: 0 20px;
+}
+.simple-slider .slide-content h1 {
+    font-family: 'Rokkitt', serif;
+    font-size: 70px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    line-height: 90px;
+    margin: 0;
+    color: rgba(255, 255, 255, 1);
+}
+.simple-slider .slide-content .separator {
+    width: 197px;
+    height: 3px;
+    background: rgba(183, 156, 125, 1);
+    margin: 25px auto;
+}
+.simple-slider .slide-content .description {
+    font-family: 'Noto Serif', serif;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 30px;
+    max-width: 637px;
+}
+.simple-slider .slide-content .btn {
+    display: inline-block;
+    padding: 18px 35px;
+    background: #ffffff;
+    color: #6b6b6b;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+.simple-slider .slide-content .btn:hover {
+    background: #b79c7d;
+    color: white;
+}
+.slider-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+}
+.slider-nav .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.slider-nav .dot.active {
+    background: #b79c7d;
+}
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 20;
+    pointer-events: none;
+}
+.slider-arrows .arrow {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+    user-select: none;
+}
+.slider-arrows .arrow:hover {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .simple-slider .slide-content h1 {
+        font-size: 30px;
+        letter-spacing: 10px;
+        line-height: 50px;
+    }
+    .simple-slider .slide-content .description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .simple-slider .slide-content .separator {
+        width: 100px;
+    }
+    .slider-arrows .arrow {
+        font-size: 30px;
+    }
+}
+</style>
+<div class="simple-slider">
+    <div class="slide active" style="background-image: url('wp-content/uploads/Guitarras-y-guitarristas.jpg');">
+        <div class="slide-content">
+            <h1 style="font-size: 70px; line-height: 90px; letter-spacing: 35px;">GUITARES</h1>
+            <div class="separator"></div>
+            <p class="description">Offrir à un artiste la possibilité d'émouvoir l'âme d'un auditoire entier est le rêve de tout luthier. À ces guitaristes, et à ceux qui s'y essaient, je dis merci pour leur quête si particulière du son.</p>
+            <a href="guitares-et-guitaristes/index.html" class="btn">Voir plus</a>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('wp-content/uploads/BIO-SLIDER-e1532966309761.jpg');">
+        <div class="slide-content">
+            <h1 style="font-size: 110px; line-height: 110px; letter-spacing: 35px;">BIO</h1>
+            <div class="separator"></div>
+            <p class="description">Depuis petit, je pensais que les arbres touchaient le ciel. Ce n'est que maintenant que je comprends que c'est la pure vérité... Aujourd'hui je m'élève vers les hauteurs grâce à certains guitaristes qui font vibrer leurs bois.</p>
+            <a href="biographie/index.html" class="btn">Voir plus</a>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('wp-content/uploads/Daniel-bernaert-1.jpg');">
+        <div class="slide-content">
+            <h1 style="font-size: 90px; line-height: 110px; letter-spacing: 35px;">CONTACT</h1>
+            <div class="separator"></div>
+            <p class="description">MOBILE - +32 493 85 67 41<br>EMAIL - danielbernaertguitar@gmail.com</p>
+            <a href="contactez-moi/index.html" class="btn">Voir plus</a>
+        </div>
+    </div>
+    <div class="slider-arrows">
+        <span class="arrow" onclick="prevSlide()">&#10094;</span>
+        <span class="arrow" onclick="nextSlideManual()">&#10095;</span>
+    </div>
+    <div class="slider-nav">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+    </div>
+</div>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.simple-slider .slide');
+const dots = document.querySelectorAll('.slider-nav .dot');
 
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-1-layer-1" 
-			 data-x="['center','center','center','center']" data-hoffset="['-219','3','76','20']" 
-			 data-y="['top','top','top','top']" data-voffset="['398','212','379','263']" 
-						data-fontsize="['70','70','30','15']"
-			data-lineheight="['90','110','110','50']"
-			data-fontweight="['400','400','400','700']"
-			data-width="['20%','635','636','429']"
-			data-height="['50%','111','111','none']"
-			data-whitespace="['nowrap','nowrap','nowrap','normal']"
- 
-			data-type="text" 
-			data-basealign="slide" 
-			data-responsive_offset="on" 
+function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
 
-			data-frames='[{"delay":500,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
+function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+}
 
-			style="z-index: 5; min-width: 20%px; max-width: 20%px; max-width: 50%px; max-width: 50%px; white-space: nowrap; font-size: 70px; line-height: 90px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Rokkitt;letter-spacing:35px;">GUITARES </div>
+function nextSlideManual() {
+    goToSlide((currentSlide + 1) % slides.length);
+}
 
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
-			 id="slide-1-layer-2" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['501','355','487','315']" 
-						data-width="197"
-			data-height="2"
-			data-whitespace="nowrap"
- 
-			data-type="shape" 
-			data-responsive_offset="on" 
+function prevSlide() {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+}
 
-			data-frames='[{"delay":700,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 6;font-family:Open Sans;background-color:rgba(183, 156, 125, 1.00);"> </div>
-
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption  " 
-			 id="slide-1-layer-3" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['529','383','512','336']" 
-						data-fontsize="['17','17','17','13']"
-			data-lineheight="['27','27','27','21']"
-			data-width="['637','637','637','340']"
-			data-height="none"
-			data-whitespace="normal"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":900,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['center','center','center','center']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 7; min-width: 637px; max-width: 637px; white-space: normal; font-size: 17px; line-height: 27px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Noto Serif;">Offrir à un artiste la possibilité d’émouvoir l’âme d’un auditoire entier est le rêve de tout luthier. À ces guitaristes, et à ceux qui s’y essaient, je dis merci pour leur quête si particulière du son. </div>
-
-		<!-- LAYER NR. 4 -->
-		<div class="tp-caption  " 
-			 id="slide-1-layer-4" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','-1']" 
-			 data-y="['top','top','top','top']" data-voffset="['700','495','613','464']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":1100,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;"><a href="guitares-et-guitaristes/index.html" target="_self" style="color: #6b6b6b;background-color: #ffffff" class="eltd-btn eltd-btn-medium eltd-btn-solid"  >
-    <span class="eltd-btn-text">Voir plus</span>
-        <span class="eltd-btn-overlay"   ></span>
-</a>
- </div>
-
-		<!-- LAYER NR. 5 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-1-layer-5" 
-			 data-x="['center','center','center','center']" data-hoffset="['3','3','3','3']" 
-			 data-y="['top','top','top','top']" data-voffset="['404','404','404','404']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":10,"speed":290,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 9; white-space: nowrap; font-size: 90px; line-height: 90px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Rokkitt;"> </div>
-
-		<!-- LAYER NR. 6 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-1-layer-7" 
-			 data-x="['center','center','center','center']" data-hoffset="['-306','-306','-306','-306']" 
-			 data-y="['middle','middle','middle','middle']" data-voffset="['-82','-82','-82','-82']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-basealign="slide" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":180,"speed":710,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power2.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 10; white-space: nowrap; font-size: 90px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Rokkitt;"> </div>
-	</li>
-	<!-- SLIDE  -->
-	<li data-index="rs-2" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="wp-content/uploads/BIO-SLIDER-e1532966309761-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/BIO-SLIDER-e1532966309761.jpg"  alt="" title="BIO SLIDER"  width="1079" height="661" data-bgposition="center center" data-kenburns="on" data-duration="15000" data-ease="Linear.easeNone" data-scalestart="120" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="9" class="rev-slidebg" data-no-retina>
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 7 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-2-layer-1" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','238','223','137']" 
-			 data-y="['middle','top','top','top']" data-voffset="['-111','233','364','251']" 
-						data-fontsize="['110','110','100','40']"
-			data-lineheight="['110','110','110','50']"
-			data-width="['none','735','691','426']"
-			data-height="['none','111','111','51']"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":500,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 5; white-space: nowrap; font-size: 110px; line-height: 110px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Rokkitt;letter-spacing:35px;">BIOGRAPHIE </div>
-
-		<!-- LAYER NR. 8 -->
-		<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
-			 id="slide-2-layer-2" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['501','355','487','315']" 
-						data-width="197"
-			data-height="2"
-			data-whitespace="nowrap"
- 
-			data-type="shape" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":700,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 6;font-family:Open Sans;background-color:rgba(183, 156, 125, 1.00);"> </div>
-
-		<!-- LAYER NR. 9 -->
-		<div class="tp-caption  " 
-			 id="slide-2-layer-3" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['529','383','510','336']" 
-						data-fontsize="['17','17','15','13']"
-			data-lineheight="['27','27','27','21']"
-			data-width="['637','637','600','300']"
-			data-height="none"
-			data-whitespace="normal"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":900,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['center','center','center','center']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 7; min-width: 637px; max-width: 637px; white-space: normal; font-size: 17px; line-height: 27px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Noto Serif;">Depuis mon enfance, je pensais que les arbres touchaient le ciel. Ce n’est que maintenant que je comprends que c’est une pure vérité… Aujourd’hui, je m’élève vers les sommets grâce à quelques guitaristes qui font vibrer leurs bois.
- </div>
-
-		<!-- LAYER NR. 10 -->
-		<div class="tp-caption  " 
-			 id="slide-2-layer-4" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','-1','-1','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['684','526','644','494']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":1100,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;"><a href="biographie/index.html" target="_self" style="color: #6b6b6b;background-color: #ffffff" class="eltd-btn eltd-btn-medium eltd-btn-solid"  >
-    <span class="eltd-btn-text">Voir plus</span>
-        <span class="eltd-btn-overlay"   ></span>
-</a>
- </div>
-	</li>
-	<!-- SLIDE  -->
-	<li data-index="rs-3" data-transition="crossfade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="wp-content/uploads/Daniel-bernaert-1-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/Daniel-bernaert-1.jpg"  alt="" title="Daniel-bernaert"  width="1200" height="800" data-bgposition="center center" data-kenburns="on" data-duration="15000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="9" class="rev-slidebg" data-no-retina>
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 11 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-3-layer-1" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','74','31']" 
-			 data-y="['top','top','top','top']" data-voffset="['388','241','372','252']" 
-						data-fontsize="['90','90','60','25']"
-			data-lineheight="['110','110','110','50']"
-			data-width="['none','800','725','454']"
-			data-height="['none','111','111','51']"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":500,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 5; white-space: nowrap; font-size: 90px; line-height: 110px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Rokkitt;letter-spacing:35px;">CONTACT </div>
-
-		<!-- LAYER NR. 12 -->
-		<div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
-			 id="slide-3-layer-2" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['501','355','487','315']" 
-						data-width="197"
-			data-height="2"
-			data-whitespace="nowrap"
- 
-			data-type="shape" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":700,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 6;font-family:Open Sans;background-color:rgba(183, 156, 125, 1.00);"> </div>
-
-		<!-- LAYER NR. 13 -->
-		<div class="tp-caption  " 
-			 id="slide-3-layer-3" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['529','383','512','336']" 
-						data-fontsize="['17','17','17','13']"
-			data-lineheight="['27','27','27','21']"
-			data-width="['637','637','637','366']"
-			data-height="['none','none','none','94']"
-			data-whitespace="normal"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":900,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['center','center','center','center']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 7; min-width: 637px; max-width: 637px; white-space: normal; font-size: 17px; line-height: 27px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Noto Serif;">Téléphone - +32 493 85 67 41
- </div>
-
-		<!-- LAYER NR. 14 -->
-		<div class="tp-caption  " 
-			 id="slide-3-layer-4" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','-2']" 
-			 data-y="['top','top','top','top']" data-voffset="['641','495','613','434']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":1100,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 8; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;"><a href="contactez-moi/index.html" target="_self" style="color: #6b6b6b;background-color: #ffffff" class="eltd-btn eltd-btn-medium eltd-btn-solid"  >
-    <span class="eltd-btn-text">Voir plus</span>
-        <span class="eltd-btn-overlay"   ></span>
-</a>
- </div>
-
-		<!-- LAYER NR. 15 -->
-		<div class="tp-caption   tp-resizeme" 
-			 id="slide-3-layer-5" 
-			 data-x="['left','left','left','left']" data-hoffset="['357','357','357','357']" 
-			 data-y="['top','top','top','top']" data-voffset="['567','567','567','567']" 
-						data-width="none"
-			data-height="none"
-			data-whitespace="nowrap"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-
-			data-frames='[{"delay":0,"speed":310,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-			data-textAlign="['inherit','inherit','inherit','inherit']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 9; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Open Sans;"> </div>
-
-		<!-- LAYER NR. 16 -->
-		<div class="tp-caption  " 
-			 id="slide-3-layer-7" 
-			 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-			 data-y="['top','top','top','top']" data-voffset="['571','422','546','366']" 
-						data-fontsize="['17','17','17','13']"
-			data-lineheight="['27','27','27','21']"
-			data-width="['637','637','637','366']"
-			data-height="['none','none','none','94']"
-			data-whitespace="normal"
- 
-			data-type="text" 
-			data-responsive_offset="on" 
-			data-responsive="off"
-			data-frames='[{"delay":900,"speed":680,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power1.easeOut"},{"delay":"wait","speed":310,"frame":"999","to":"opacity:0;","ease":"Power3.easeOut"}]'
-			data-textAlign="['center','center','center','center']"
-			data-paddingtop="[0,0,0,0]"
-			data-paddingright="[0,0,0,0]"
-			data-paddingbottom="[0,0,0,0]"
-			data-paddingleft="[0,0,0,0]"
-
-			style="z-index: 10; min-width: 637px; max-width: 637px; white-space: normal; font-size: 17px; line-height: 27px; font-weight: 400; color: rgba(255, 255, 255, 1.00);font-family:Noto Serif;">E-MAIL - info@guitarrasbernaert.com </div>
-	</li>
-</ul>
-<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
-						if(htmlDiv) {
-							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-						}else{
-							var htmlDiv = document.createElement("div");
-							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-						}
-					</script>
-<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
-<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
-				if(htmlDiv) {
-					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-				}else{
-					var htmlDiv = document.createElement("div");
-					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-				}
-			</script>
-		<script type="text/javascript">
-						/******************************************
-				-	PREPARE PLACEHOLDER FOR SLIDER	-
-			******************************************/
-
-			var setREVStartSize=function(){
-				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
-					e.c = jQuery('#rev_slider_1_1');
-					e.responsiveLevels = [1240,1024,778,480];
-					e.gridwidth = [1200,1100,778,480];
-					e.gridheight = [1100,768,960,720];
-							
-					e.sliderLayout = "auto";
-					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
-					
-				}catch(d){console.log("Failure at Presize of Slider:"+d)}
-			};
-			
-			setREVStartSize();
-			
-						var tpj=jQuery;
-			
-			var revapi1;
-			tpj(document).ready(function() {
-				if(tpj("#rev_slider_1_1").revolution == undefined){
-					revslider_showDoubleJqueryError("#rev_slider_1_1");
-				}else{
-					revapi1 = tpj("#rev_slider_1_1").show().revolution({
-						sliderType:"standard",
-jsFileLocation:"//www.guitarrasbernaert.com/wp-content/plugins/revslider/public/assets/js/",
-						sliderLayout:"auto",
-						dottedOverlay:"none",
-						delay:5000,
-						navigation: {
-							keyboardNavigation:"off",
-							keyboard_direction: "horizontal",
-							mouseScrollNavigation:"off",
- 							mouseScrollReverse:"default",
-							onHoverStop:"off",
-							arrows: {
-								style:"hesperiden-1",
-								enable:true,
-								hide_onmobile:true,
-								hide_under:769,
-								hide_onleave:false,
-								tmp:'<div class="eltd-slider-nav-info"></div>',
-								left: {
-									h_align:"left",
-									v_align:"center",
-									h_offset:20,
-									v_offset:0
-								},
-								right: {
-									h_align:"right",
-									v_align:"center",
-									h_offset:20,
-									v_offset:0
-								}
-							}
-							,
-							bullets: {
-								enable:true,
-								hide_onmobile:false,
-								style:"hesperiden-1",
-								hide_onleave:false,
-								direction:"horizontal",
-								h_align:"center",
-								v_align:"bottom",
-								h_offset:0,
-								v_offset:35,
-								space:5,
-								tmp:''
-							}
-						},
-						responsiveLevels:[1240,1024,778,480],
-						visibilityLevels:[1240,1024,778,480],
-						gridwidth:[1200,1100,778,480],
-						gridheight:[1100,768,960,720],
-						lazyType:"none",
-						parallax: {
-							type:"mouse",
-							origo:"enterpoint",
-							speed:6000,
-							levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
-						},
-						shadow:0,
-						spinner:"spinner2",
-						stopLoop:"off",
-						stopAfterLoops:-1,
-						stopAtSlide:-1,
-						shuffle:"off",
-						autoHeight:"off",
-						disableProgressBar:"on",
-						hideThumbsOnMobile:"off",
-						hideSliderAtLimit:0,
-						hideCaptionAtLimit:0,
-						hideAllCaptionAtLilmit:0,
-						debugMode:false,
-						fallbacks: {
-							simplifyAll:"off",
-							nextSlideOnWindowFocus:"off",
-							disableFocusListener:false,
-						}
-					});
-				}
-			});	/*ready*/
-		</script>
-		<script>
-					var htmlDivCss = ' #rev_slider_1_1_wrapper .tp-loader.spinner2{ background-color: #b79c7d !important; } ';
-					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
-					if(htmlDiv) {
-						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-					}
-					else{
-						var htmlDiv = document.createElement('div');
-						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
-						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
-					}
-					</script>
-					<script>
-					var htmlDivCss = unescape("%23rev_slider_1_1%20.hesperiden-1.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3Atransparent%3B%0A%09width%3A120px%3B%0A%09height%3A20px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A100%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tparrows%3Ahover%20%7B%0A%09background%3Atransparent%3B%0A%20%20%20%20%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tparrows%3Abefore%20%7B%0A%20%20%20%20font-family%3A%20%22linea-arrows-10%22%20%21important%3B%0A%09font-size%3A72px%3B%0A%09color%3A%23fff%3B%0A%20%20%20%20font-weight%3A300%3B%0A%09display%3Ainline-block%3B%0A%09line-height%3A%2072px%3B%0A%09text-align%3A%20left%3B%0A%7D%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce03f%22%3B%0A%20%20%20%20margin-left%3A-3px%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tparrows%20.eltd-slider-nav-info%7B%0A%20%20%20%20display%3Ainline-block%3B%0A%20%20%20%20color%3A%23fff%3B%0A%20%20%20%20text-transform%3Auppercase%3B%0A%20%20%20%20font-size%3A12px%3B%0A%20%20%20%20font-family%3A%27Montserrat%27%2C%20cursive%3B%0A%20%20%20%20font-weight%3Abold%3B%0A%20%20%20%20vertical-align%3A%20middle%3B%0A%20%20%20%20%20line-height%3A%2020px%3B%0A%20%20%20%20%20border-bottom%3A2px%20solid%20transparent%3B%0A%7D%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows%20.eltd-slider-nav-info%3Aafter%20%7B%0A%20%09transition%3A%20all%200.3s%20ease-in-out%3B%0A%20%20%20%20border-bottom%3A2px%20solid%20transparent%3B%0A%7D%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows%20.eltd-slider-nav-info%3Ahover%3Aafter%20%7B%0A%20%09border-bottom%3A2px%20solid%20%23fff%3B%0A%7D%0A%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-rightarrow%20.eltd-slider-nav-info%7B%0A%20%20%20%20position%3Aabsolute%3B%0A%20%20%20%20right%3A0%3B%0A%20%20%20%20padding-right%3A20px%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-leftarrow%20.eltd-slider-nav-info%7B%0A%20%20%20%20position%3Aabsolute%3B%0A%20%20%20%20left%3A0%3B%0A%20%20%20%20padding-left%3A20px%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09%20%20content%3A%20%22%5Ce04b%22%3B%0A%20%20%20%20margin-right%3A-3px%3B%0A%20%20%20%20float%3A%20right%3B%0A%20%20%20%20margin-top%3A%20-1px%3B%0A%7D%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-leftarrow%3Abefore%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate3d%28-100px%2C0%2C0%29%3B%0A%20%20%20%20transform%3Atranslate3d%28-100px%2C0%2C0%29%3B%0A%20%20%20%20-webkit-transition%3A%20-webkit-transform%200.3s%20ease-in-out%3B%0A%20%20%20%20transition%3A%20transform%200.3s%20ease-in-out%3B%0A%7D%0A%0A%23rev_slider_1_1%20.hesperiden-1.tparrows.tp-rightarrow%3Abefore%20%7B%0A%20%20%20%20-webkit-transform%3A%20translate3d%28100px%2C0%2C0%29%3B%0A%20%20%20%20transform%3Atranslate3d%28100px%2C0%2C0%29%3B%0A%20%20%20%20-webkit-transition%3A%20-webkit-transform%200.3s%20ease-in-out%3B%0A%20%20%20%20transition%3A%20transform%200.3s%20ease-in-out%3B%0A%7D%0A%0A.rev_slider%3Ahover%20.tparrows.tp-leftarrow%3Abefore%2C%0A.rev_slider%3Ahover%20.tparrows.tp-rightarrow%3Abefore%20%7B%20%0A%20%20%20%20-webkit-transform%3A%20translate3d%280%2C0%2C0%29%20%21important%3B%0A%20%20%20%20transform%3Atranslate3d%280%2C0%2C0%29%20%21important%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tp-bullets%20%7B%0A%20%20%20%20width%3A%20auto%21important%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1.tp-bullets%3Abefore%20%7B%0A%09content%3A%22%20%22%3B%0A%09position%3Aabsolute%3B%0A%09width%3A100%25%3B%0A%09height%3A100%25%3B%0A%09background%3Atransparent%3B%0A%09padding%3A10px%3B%0A%09margin-left%3A-10px%3Bmargin-top%3A-10px%3B%0A%09box-sizing%3Acontent-box%3B%0A%20%20%20border-radius%3A8px%3B%0A%20%20%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet%20%7B%0A%09width%3A11px%3B%0A%09height%3A11px%3B%0A%09position%3Arelative%3B%0A%09border%3A2px%20solid%20%23ffffff%3B%0A%20%20%20%20background-color%3A%23ffffff%3B%0A%09border-radius%3A50%25%3B%0A%09cursor%3A%20pointer%3B%0A%09box-sizing%3Aborder-box%3B%0A%20%20%20%20float%3Aleft%3B%0A%20%20%20%20left%3A0%21important%3B%0A%20%20%20%20%20margin-right%3A9px%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet%3Alast-child%7B%0Amargin-right%3A0%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet%3Ahover%2C%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet.selected%20%7B%0A%09%20%20%20%20background-color%3A%23b79c7d%3B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet-image%20%7B%0A%7D%0A%23rev_slider_1_1%20.hesperiden-1%20.tp-bullet-title%20%7B%0A%7D%0A%0A");
-					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
-					if(htmlDiv) {
-						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-					}
-					else{
-						var htmlDiv = document.createElement('div');
-						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
-						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
-					}
-				  </script>
-				</div><!-- END REVOLUTION SLIDER -->		</div>
+setInterval(nextSlide, 6000);
+</script>
+		</div>
 	</div>
 
 <div class="eltd-full-width">
