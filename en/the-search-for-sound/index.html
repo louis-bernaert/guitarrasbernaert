@@ -274,37 +274,42 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
 <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1532960906921{padding-top: 5% !important;padding-bottom: 5% !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
 /* Mobile Language Selector - Aligned with hamburger menu */
 .eltd-mobile-header .eltd-position-right {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    float: right !important;
+    position: relative !important;
+    z-index: 2 !important;
+    height: 100% !important;
+    width: auto !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
 }
-.eltd-mobile-header .eltd-vertical-align-containers {
-    position: relative;
+.eltd-mobile-header .eltd-position-right-inner {
+    display: table !important;
+    height: 100% !important;
 }
 .mobile-lang-selector {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: table-cell !important;
+    vertical-align: middle !important;
+    height: 100%;
 }
 .mobile-lang-current {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 0 10px;
     background: transparent;
-    border-radius: 4px;
 }
 .mobile-lang-current img.mobile-lang-flag {
     width: 24px;
     height: 16px;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    vertical-align: middle;
 }
 .mobile-lang-current span {
     display: none;
+}
 }
 .mobile-lang-current i {
     color: #fff;
