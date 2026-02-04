@@ -275,35 +275,53 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
 <meta name="msapplication-TileImage" content="wp-content/uploads/cropped-logo-D-270x270.png" />
 <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1478683587469{padding-top: 105px !important;padding-bottom: 60px !important;}.vc_custom_1478683563485{padding-bottom: 85px !important;}.vc_custom_1531925874856{padding-bottom: px !important;}.vc_custom_1531926269554{padding-bottom: px !important;}.vc_custom_1531845595734{padding-right: 10% !important;padding-left: 10% !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
 /* Mobile Language Selector - Aligned with hamburger menu */
-.eltd-mobile-header .eltd-position-right {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+.eltd-mobile-header .eltd-mobile-header-holder .eltd-grid {
+    position: relative;
 }
 .eltd-mobile-header .eltd-vertical-align-containers {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.eltd-mobile-header .eltd-mobile-menu-opener {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.eltd-mobile-header .eltd-position-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.eltd-mobile-header .eltd-position-right-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 .mobile-lang-selector {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 .mobile-lang-current {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 8px;
     background: transparent;
     border-radius: 4px;
+    height: auto;
 }
 .mobile-lang-current img.mobile-lang-flag {
     width: 24px;
     height: 16px;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    vertical-align: middle;
 }
 .mobile-lang-current span {
     display: none;
@@ -331,7 +349,7 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 99999;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .mobile-lang-selector:hover .mobile-lang-dropdown {
     opacity: 1;
