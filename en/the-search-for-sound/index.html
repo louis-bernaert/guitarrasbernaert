@@ -273,24 +273,31 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
 <meta name="msapplication-TileImage" content="wp-content/uploads/cropped-logo-D-270x270.png" />
 <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1532960906921{padding-top: 5% !important;padding-bottom: 5% !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
 /* Mobile Language Selector - Aligned with hamburger menu */
-.eltd-mobile-header .eltd-position-right {
-    float: right !important;
+.eltd-mobile-header .eltd-vertical-align-containers {
     position: relative !important;
-    z-index: 2 !important;
-    height: 100% !important;
+}
+.eltd-mobile-header .eltd-position-right {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
     width: auto !important;
-    top: auto !important;
-    right: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
     transform: none !important;
+    float: none !important;
+    z-index: 100 !important;
 }
 .eltd-mobile-header .eltd-position-right-inner {
-    display: table !important;
+    display: flex !important;
+    align-items: center !important;
     height: 100% !important;
 }
 .mobile-lang-selector {
-    display: table-cell !important;
-    vertical-align: middle !important;
-    height: 100%;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
 }
 .mobile-lang-current {
     display: flex;
@@ -305,7 +312,6 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
     height: 16px;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    vertical-align: middle;
 }
 .mobile-lang-current span {
     display: none;
