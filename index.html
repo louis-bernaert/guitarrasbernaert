@@ -591,6 +591,8 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
     text-align: center;
     color: rgba(255, 255, 255, 1);
     z-index: 10;
+    max-width: 700px;
+    padding: 0 20px;
 }
 .simple-slider .slide-content h1 {
     font-family: 'Rokkitt', serif;
@@ -599,22 +601,22 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
     letter-spacing: 35px;
     line-height: 90px;
     margin: 0;
-    white-space: nowrap;
-}
-.simple-slider .slide-content h2 {
-    font-family: 'Rokkitt', serif;
-    font-size: 50px;
-    font-weight: 400;
-    letter-spacing: 25px;
-    line-height: 60px;
-    margin: 0;
-    white-space: nowrap;
+    color: rgba(255, 255, 255, 1);
 }
 .simple-slider .slide-content .separator {
     width: 197px;
-    height: 2px;
-    background: #ffffff;
+    height: 3px;
+    background: rgba(183, 156, 125, 1);
     margin: 25px auto;
+}
+.simple-slider .slide-content .description {
+    font-family: 'Noto Serif', serif;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 30px;
+    max-width: 637px;
 }
 .simple-slider .slide-content .btn {
     display: inline-block;
@@ -628,7 +630,6 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s;
-    margin-top: 20px;
 }
 .simple-slider .slide-content .btn:hover {
     background: #b79c7d;
@@ -655,43 +656,76 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
 .slider-nav .dot.active {
     background: #b79c7d;
 }
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 20;
+    pointer-events: none;
+}
+.slider-arrows .arrow {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+    user-select: none;
+}
+.slider-arrows .arrow:hover {
+    opacity: 1;
+}
 @media (max-width: 768px) {
     .simple-slider .slide-content h1 {
-        font-size: 25px;
+        font-size: 30px;
         letter-spacing: 10px;
         line-height: 50px;
     }
-    .simple-slider .slide-content h2 {
-        font-size: 18px;
-        letter-spacing: 8px;
-        line-height: 30px;
+    .simple-slider .slide-content .description {
+        font-size: 14px;
+        line-height: 22px;
     }
     .simple-slider .slide-content .separator {
         width: 100px;
+    }
+    .slider-arrows .arrow {
+        font-size: 30px;
     }
 }
 </style>
 <div class="simple-slider">
     <div class="slide active" style="background-image: url('wp-content/uploads/Guitarras-y-guitarristas.jpg');">
         <div class="slide-content">
-            <h1 style="font-size: 70px; line-height: 90px; font-weight: 400; color: rgba(255, 255, 255, 1); font-family: 'Rokkitt', serif; letter-spacing: 35px;">GUITARRAS</h1>
+            <h1 style="font-size: 70px; line-height: 90px; letter-spacing: 35px;">GUITARRAS</h1>
             <div class="separator"></div>
+            <p class="description">Dar en manos de un artista la posibilidad de conmover el alma de un auditorio lleno es el sueño de cualquier luthier. A estos guitarristas y a los que lo intentan doy la gracias por su particular búsqueda del sonido.</p>
             <a href="guitarras-y-guitarristas/index.html" class="btn">Ver más</a>
         </div>
     </div>
     <div class="slide" style="background-image: url('wp-content/uploads/BIO-SLIDER-e1532966309761.jpg');">
         <div class="slide-content">
-            <h1 style="font-size: 110px; line-height: 110px; font-weight: 400; color: rgba(255, 255, 255, 1); font-family: 'Rokkitt', serif; letter-spacing: 35px;">BIO</h1>
+            <h1 style="font-size: 110px; line-height: 110px; letter-spacing: 35px;">BIO</h1>
             <div class="separator"></div>
+            <p class="description">Desde pequeño pensaba que los árboles tocaban el cielo. Sólo ahora entiendo que es pura verdad... Hoy me elevo hacia lo más alto gracias a algunos guitarristas que hacen vibrar sus maderas.</p>
             <a href="bio/index.html" class="btn">Ver más</a>
         </div>
     </div>
     <div class="slide" style="background-image: url('wp-content/uploads/Daniel-bernaert-1.jpg');">
         <div class="slide-content">
-            <h1 style="font-size: 90px; line-height: 110px; font-weight: 400; color: rgba(255, 255, 255, 1); font-family: 'Rokkitt', serif; letter-spacing: 35px;">CONTACTO</h1>
+            <h1 style="font-size: 90px; line-height: 110px; letter-spacing: 35px;">CONTACTO</h1>
             <div class="separator"></div>
+            <p class="description">MÓVIL - +32 493 85 67 41<br>EMAIL - danielbernaertguitar@gmail.com</p>
             <a href="ponte-en-contacto/index.html" class="btn">Ver más</a>
         </div>
+    </div>
+    <div class="slider-arrows">
+        <span class="arrow" onclick="prevSlide()">&#10094;</span>
+        <span class="arrow" onclick="nextSlideManual()">&#10095;</span>
     </div>
     <div class="slider-nav">
         <div class="dot active" onclick="goToSlide(0)"></div>
@@ -714,6 +748,14 @@ function goToSlide(n) {
 
 function nextSlide() {
     goToSlide((currentSlide + 1) % slides.length);
+}
+
+function nextSlideManual() {
+    goToSlide((currentSlide + 1) % slides.length);
+}
+
+function prevSlide() {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
 }
 
 setInterval(nextSlide, 6000);
