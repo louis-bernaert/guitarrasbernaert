@@ -271,7 +271,81 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
 <link rel="icon" href="../wp-content/uploads/cropped-logo-D-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../wp-content/uploads/cropped-logo-D-180x180.png" />
 <meta name="msapplication-TileImage" content="https://www.guitarrasbernaert.com/wp-content/uploads/cropped-logo-D-270x270.png" />
-<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1478789379535{padding-top: 110px !important;padding-bottom: 80px !important;}.vc_custom_1478788723799{padding-right: 5% !important;padding-left: 5% !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1478789379535{padding-top: 110px !important;padding-bottom: 80px !important;}.vc_custom_1478788723799{padding-right: 5% !important;padding-left: 5% !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
+/* Mobile Language Selector */
+.mobile-lang-selector {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+.mobile-lang-current {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+.mobile-lang-current img.mobile-lang-flag {
+    width: 20px;
+    height: 14px;
+    margin-right: 6px;
+    border-radius: 2px;
+}
+.mobile-lang-current span {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 4px;
+}
+.mobile-lang-current i {
+    color: #fff;
+    font-size: 10px;
+    transition: transform 0.3s;
+}
+.mobile-lang-selector:hover .mobile-lang-current i {
+    transform: rotate(180deg);
+}
+.mobile-lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #222;
+    border-radius: 4px;
+    min-width: 120px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+.mobile-lang-selector:hover .mobile-lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+.mobile-lang-dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.2s;
+}
+.mobile-lang-dropdown a:last-child {
+    border-bottom: none;
+}
+.mobile-lang-dropdown a:hover {
+    background: rgba(255,255,255,0.1);
+}
+.mobile-lang-dropdown a.active {
+    background: rgba(200,169,130,0.3);
+    color: #c8a982 !important;
+}
+</style>
+</head>
 
 <body class="page-template page-template-full-width page-template-full-width-php page page-id-9219 eltd-core-1.0 creator-ver-1.2 eltd-smooth-scroll  eltd-grid-1200 eltd-blog-installed eltd-default-style eltd-fade-push-text-top eltd-header-standard eltd-sticky-header-on-scroll-down-up eltd-default-mobile-header eltd-sticky-up-mobile-header eltd-menu-item-first-level-bg-color eltd-dropdown-slide-from-bottom eltd-light-header eltd-fullscreen-search eltd-search-fade wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
 <div class="eltd-wrapper">
@@ -433,7 +507,19 @@ var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPr
                         </div>
                                         <div class="eltd-position-right">
                         <div class="eltd-position-right-inner">
-                                                    </div>
+<div class="mobile-lang-selector">
+    <div class="mobile-lang-current">
+        <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="mobile-lang-flag">
+        <span>EN</span>
+        <i class="fa fa-chevron-down"></i>
+    </div>
+    <div class="mobile-lang-dropdown">
+        <a href="../../bio/index.html">Español</a>
+        <a href="../../fr/biographie/index.html">Français</a>
+        <a href="../../en/biography/index.html" class="active">English</a>
+    </div>
+</div>
+</div>
                     </div>
                 </div> <!-- close .eltd-vertical-align-containers -->
             </div>
